@@ -15,7 +15,7 @@ h1 {
 
 }
 
-.pole {
+section {
  margin: 20vh auto;
  display: flex;
  justify-content: space-between;
@@ -61,4 +61,22 @@ button {
 .description {
  margin: 10vh auto;
  font-size: 3vh;
+}
+
+@keyframes smooth {
+ 10% {
+  opacity: 1;
+ }
+
+ 45% {
+  opacity: 0;
+ }
+
+ 55% {
+  opacity: 0;
+ }
+
+ 90% {
+  opacity: 1;
+ }
 }

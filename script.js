@@ -10,6 +10,9 @@ const commonBoyNames = ["Adam", "Jacek", "Aleksander", "Andrzej", "Artur", "Anto
 const foreignBoyNames = ["Brian", "Aaron", "Colin", "Kevin", "Nicolas", "Ryan"];
 const crazyBoyNames = ["Polikarp", "Żyraf", "Kwadrat"];
 
+function sleep(time) {
+ return new Promise((resolve) => setTimeout(resolve, time));
+}
 
 const girlNameGenerator = (s) => {
  question.textContent = "Kliknij przycisk i wylosuj idealne imię!";
@@ -55,38 +58,75 @@ const boyNameGenerator = (s) => {
 
 
 selectGirl.addEventListener('click', () => {
- question.textContent = "Na czym najbardziej Ci zależy?";
- section.innerHTML = "<div class='option common'><div></div><p>Chcę nadać zwykłe imię</p></div><div class='option foreign'><div></div><p>Chcę modne, zgraniczne imię</p></div><div class='option crazy'><div></div><p>Chcę żeby śmiali się z niej w szkole</p></div>";
- document.body.style.backgroundColor = "pink";
- const common = document.querySelector('.common');
- const foreign = document.querySelector('.foreign');
- const crazy = document.querySelector('.crazy');
- common.addEventListener('click', () => {
-  girlNameGenerator('common')
- })
- foreign.addEventListener('click', () => {
-  girlNameGenerator('foreign')
- })
- crazy.addEventListener('click', () => {
-  girlNameGenerator('crazy')
+ section.style.animation = "smooth 3s linear";
+ question.style.animation = "smooth 3s linear";
+ sleep(1500).then(() => {
+  question.textContent = "Na czym najbardziej Ci zależy?";
+  section.innerHTML = "<div class='option common'><div></div><p>Chcę nadać zwykłe imię</p></div><div class='option foreign'><div></div><p>Chcę modne, zgraniczne imię</p></div><div class='option crazy'><div></div><p>Chcę żeby śmiali się z niej w szkole</p></div>";
+  document.body.style.backgroundColor = "pink";
+  const common = document.querySelector('.common');
+  const foreign = document.querySelector('.foreign');
+  const crazy = document.querySelector('.crazy');
+  section.style.animation = "none";
+  question.style.animation = "none";
+  common.addEventListener('click', () => {
+   section.style.animation = "smooth 3s linear";
+   question.style.animation = "smooth 3s linear";
+   sleep(1500).then(() => {
+    girlNameGenerator('common')
+   });
+  })
+  foreign.addEventListener('click', () => {
+   section.style.animation = "smooth 3s linear";
+   question.style.animation = "smooth 3s linear";
+   sleep(1500).then(() => {
+    girlNameGenerator('foreign')
+   });
+  })
+  crazy.addEventListener('click', () => {
+   section.style.animation = "smooth 3s linear";
+   question.style.animation = "smooth 3s linear";
+   sleep(1500).then(() => {
+    girlNameGenerator('crazy')
+   });
+  })
  })
 })
 
 
+
 selectBoy.addEventListener('click', () => {
- question.textContent = "Na czym najbardziej Ci zależy?";
- section.innerHTML = "<div class='option common'><div></div><p>Chcę nadać zwykłe imię</p></div><div class='option foreign'><div></div><p>Chcę modne, zgraniczne imię</p></div><div class='option crazy'><div></div><p>Chcę żeby śmiali się z niego w szkole</p></div>";
- document.body.style.backgroundColor = "rgb(179, 255, 255)";
- const common = document.querySelector('.common');
- const foreign = document.querySelector('.foreign');
- const crazy = document.querySelector('.crazy');
- common.addEventListener('click', () => {
-  boyNameGenerator('common')
- })
- foreign.addEventListener('click', () => {
-  boyNameGenerator('foreign')
- })
- crazy.addEventListener('click', () => {
-  boyNameGenerator('crazy')
+ section.style.animation = "smooth 3s linear";
+ question.style.animation = "smooth 3s linear";
+ sleep(1500).then(() => {
+  question.textContent = "Na czym najbardziej Ci zależy?";
+  section.innerHTML = "<div class='option common'><div></div><p>Chcę nadać zwykłe imię</p></div><div class='option foreign'><div></div><p>Chcę modne, zgraniczne imię</p></div><div class='option crazy'><div></div><p>Chcę żeby śmiali się z niego w szkole</p></div>";
+  document.body.style.backgroundColor = "rgb(179, 255, 255)";
+  const common = document.querySelector('.common');
+  const foreign = document.querySelector('.foreign');
+  const crazy = document.querySelector('.crazy');
+  section.style.animation = "none";
+  question.style.animation = "none";
+  common.addEventListener('click', () => {
+   section.style.animation = "smooth 3s linear";
+   question.style.animation = "smooth 3s linear";
+   sleep(1500).then(() => {
+    boyNameGenerator('common')
+   })
+  })
+  foreign.addEventListener('click', () => {
+   section.style.animation = "smooth 3s linear";
+   question.style.animation = "smooth 3s linear";
+   sleep(1500).then(() => {
+    boyNameGenerator('foreign')
+   })
+  })
+  crazy.addEventListener('click', () => {
+   section.style.animation = "smooth 3s linear";
+   question.style.animation = "smooth 3s linear";
+   sleep(1500).then(() => {
+    boyNameGenerator('crazy')
+   })
+  })
  })
 })
